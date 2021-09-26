@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import GamePlay from "./components/pages/GamePlay";
+import GameSetup from "./components/pages/GameSetup";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Rock Paper Scissor &amp; more..</h1>
+      <Switch>
+        <Route path="/game-setup" component={GameSetup} />
+        <Route exact path="/game-play" component={GamePlay} />
+        <Route path="/**">
+          <Redirect to="/game-setup" />
+        </Route>
+      </Switch>
     </div>
   );
 }
