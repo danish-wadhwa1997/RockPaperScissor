@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { GAME_TYPES } from "../../configuration/constants";
 import PrimaryButton from "../atoms/PrimaryButton";
+import { GameTypeContext } from "../context/GameTypeContext";
 
 type AppProps = {
   onPlay: (value: string) => any;
 };
 
 const PlayersType = ({ onPlay }: AppProps) => {
-  const [gameType, setGameType] = useState<string>("");
+  const game = useContext(GameTypeContext);
+  const [gameType, setGameType] = useState<string>(game.gameType);
   const handlePlayersType = (value: string) => {
     setGameType(value);
   };
