@@ -7,3 +7,7 @@ export declare interface Choice {
 export declare interface PropsChildren {
   children: React.ReactNode;
 }
+
+export declare interface RulesObj {
+  [key: string]: string[];
+}
