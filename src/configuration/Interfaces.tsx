@@ -11,3 +11,8 @@ export declare interface PropsChildren {
 export declare interface RulesObj {
   [key: string]: string[];
 }
+
+export declare interface SelectOption {
+  label: string;
+  value: string;
+}

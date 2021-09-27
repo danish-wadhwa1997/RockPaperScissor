@@ -1,23 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
-type AppProps = {
-  choice1: string;
-  choice2: string;
-  rules: Object;
-};
-
-const GamePlay = ({}: AppProps) => {
-  const [playing, setPlaying] = useState(true);
+const GamePlay = () => {
   return (
     <div className="p-3">
       game play
-      <div className="player1">
-        {playing && <React.Fragment></React.Fragment>}
-      </div>
+      <div className="player1"></div>
       <h4 className="versus">V/S</h4>
-      <div className="player2">
-        {playing && <React.Fragment></React.Fragment>}
-      </div>
+      <div className="player2"></div>
     </div>
   );
 };

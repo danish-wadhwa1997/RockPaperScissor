@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import MainHeadings from "../atoms/MainHeadings";
 import { Choice } from "../../configuration/Interfaces";
 import Choices from "../molecules/Choices";
