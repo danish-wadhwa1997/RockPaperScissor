@@ -16,21 +16,24 @@ const Rules = ({ rules, choices, label, onChange }: AppProps) => {
   ): any => {
     let newList = [];
     newList = list
-      .filter((item) => {
-        return (
-          item.label.toLowerCase() !== label.toLowerCase() &&
-          !rules[item.label].includes(label)
-        );
-      })
-      .map((item) => {
-        return { label: item.label, value: item.label };
-      });
+      ? list
+          .filter((item) => {
+            return (
+              item.label.toLowerCase() !== label.toLowerCase() &&
+              rules[item.label] &&
+              !rules[item.label].includes(label)
+            );
+          })
+          .map((item) => {
+            return { label: item.label, value: item.label };
+          })
+      : [];
     return newList;
   };
 
   const transformList = (list: string[]): SelectOption[] => {
     let newList = [];
-    newList = list.map((item) => ({ label: item, value: item }));
+    newList = list ? list.map((item) => ({ label: item, value: item })) : [];
     return newList;
   };
 

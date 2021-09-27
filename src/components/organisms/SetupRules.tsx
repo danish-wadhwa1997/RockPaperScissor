@@ -20,7 +20,7 @@ const SetupRules = () => {
       }
     });
     changeRules(newRules);
-  }, [choices, rules, changeRules]);
+  }, []);
 
   const handleRuleChange = (
     value: SelectOption[],
