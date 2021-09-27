@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import MainHeadings from "../atoms/MainHeadings";
 import { Choice } from "../../configuration/Interfaces";
 import Choices from "../molecules/Choices";
 import ChoiceView from "../atoms/ChoiceView";
 import PrimaryButton from "../atoms/PrimaryButton";
 import { useHistory } from "react-router-dom";
+import { ChoiceContext } from "../context/ChoiceContext";
 const AddChoices = () => {
-  const [choices, setChoices] = useState<Choice[]>([]);
+  const { choices, updateChoice } = useContext(ChoiceContext);
   const history = useHistory();
+
   const onAdd = (obj: Choice) => {
     let newOptions = [...choices];
     newOptions.push(obj);
-    setChoices(newOptions);
+    updateChoice(newOptions);
   };
 
   const handleChoiceDelete = (label: string): any => {
     let newOptions = choices.filter((item) => item.label !== label);
-    setChoices(newOptions);
+    updateChoice(newOptions);
   };
 
   const handleNext = () => {
