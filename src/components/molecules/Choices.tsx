@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Choice } from "../../configuration/Interfaces";
 import PrimaryButton from "../atoms/PrimaryButton";
 
@@ -9,6 +9,8 @@ type AppProps = {
 const Choices = ({ onAdd }: AppProps) => {
   const [name, setName] = React.useState<string>("");
   const [fileURL, setFileURL] = React.useState<string>("");
+  const uploadRef = useRef<HTMLInputElement>(null!);
+
   const handleNameChange = (e: React.FormEvent<HTMLInputElement>) => {
     setName((e.target as HTMLInputElement).value);
   };
@@ -26,6 +28,9 @@ const Choices = ({ onAdd }: AppProps) => {
         image: fileURL,
         label: name,
       };
+      setName("");
+      setFileURL("");
+      uploadRef.current.value = "";
       onAdd(obj);
     }
   };
@@ -40,6 +45,7 @@ const Choices = ({ onAdd }: AppProps) => {
           className="form-control"
           type="file"
           id={`choice-image`}
+          ref={uploadRef}
           onChange={handleUpload}
         />
       </div>
