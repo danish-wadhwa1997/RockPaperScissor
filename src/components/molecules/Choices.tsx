@@ -17,7 +17,6 @@ const Choices = ({ onAdd }: AppProps) => {
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if ((e.target as any).files.length > 0) {
       const file = URL.createObjectURL((e.target as any).files[0]);
-      console.log(file);
       setFileURL(file);
     }
   };

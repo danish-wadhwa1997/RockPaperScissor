@@ -43,7 +43,6 @@ const GamePlayContainer = ({ onEnd, result }: AppProps) => {
   }, [gameType]);
 
   const getRandomIndex = (limit: number): number => {
-    console.log(Math.floor(Math.random() * limit));
     return Math.floor(Math.random() * limit);
   };
 

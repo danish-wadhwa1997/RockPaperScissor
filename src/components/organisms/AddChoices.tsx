@@ -22,7 +22,6 @@ const AddChoices = () => {
   };
 
   const handleNext = () => {
-    console.log(choices);
     history.replace("/game-setup/setup-rules");
   };
   return (
