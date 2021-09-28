@@ -18,8 +18,8 @@ const PlayersType = ({ onPlay }: AppProps) => {
     onPlay(gameType);
   };
   return (
-    <div>
-      <div className="form-check">
+    <div className="d-flex flex-column justify-content-center align-items-center">
+      <div className="form-check my-2">
         <input
           className="form-check-input"
           type="radio"
@@ -35,7 +35,7 @@ const PlayersType = ({ onPlay }: AppProps) => {
           {GAME_TYPES.PLAYER_AND_COMPUTER}
         </label>
       </div>
-      <div className="form-check">
+      <div className="form-check my-2 mb-5">
         <input
           className="form-check-input"
           type="radio"
@@ -51,6 +51,7 @@ const PlayersType = ({ onPlay }: AppProps) => {
           {GAME_TYPES.COMPUTER_AND_COMPUTER}
         </label>
       </div>
+
       <PrimaryButton onClick={handlePlay}>PLAY</PrimaryButton>
     </div>
   );

@@ -40,18 +40,24 @@ const SetupRules = () => {
   return (
     <div>
       <MainHeadings text="Add Rules" />
-      <p>Note: Select the options which can defeat the choice on left</p>
-      {choices &&
-        choices.map((item) => (
-          <Rules
-            key={item.label}
-            rules={rules}
-            onChange={handleRuleChange}
-            choices={choices}
-            label={item.label}
-          />
-        ))}
-      <PrimaryButton onClick={handleStart}>Start</PrimaryButton>
+      <p className="lead text-center">
+        Note: Select the options which can defeat the label.
+      </p>
+      <div className="row">
+        {choices &&
+          choices.map((item) => (
+            <Rules
+              key={item.label}
+              rules={rules}
+              onChange={handleRuleChange}
+              choices={choices}
+              label={item.label}
+            />
+          ))}
+      </div>
+      <div className="text-center mt-5">
+        <PrimaryButton onClick={handleStart}>Start</PrimaryButton>
+      </div>
     </div>
   );
 };

@@ -61,7 +61,7 @@ const Choices = ({ onAdd }: AppProps) => {
           value={name}
         />
       </div>
-      <div>
+      <div className="text-center">
         <PrimaryButton onClick={handleAdd}>Add</PrimaryButton>
       </div>
     </div>

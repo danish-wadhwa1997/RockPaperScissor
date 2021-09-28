@@ -38,7 +38,7 @@ const Rules = ({ rules, choices, label, onChange }: AppProps) => {
   };
 
   return (
-    <div>
+    <div className="my-3 col-md-4 col-xl-3">
       <div>{label}:</div>
       <Select
         options={getFilteredOptions(choices, label, rules)}
