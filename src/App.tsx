@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   Redirect,
+  Link,
 } from "react-router-dom";
 import GamePlay from "./components/pages/GamePlay";
 import GameSetup from "./components/pages/GameSetup";
@@ -18,7 +19,13 @@ function App() {
           <RulesProvider>
             <div className="container-fluid py-5">
               <h1 className="display-1 mb-5 text-center">
-                Rock Paper Scissor &amp; more..
+                <Link
+                  className="link-decoration-none"
+                  to="/"
+                  title="Click on this to reset game"
+                >
+                  Rock Paper Scissor &amp; more..
+                </Link>
               </h1>
               <Switch>
                 <Route path="/game-setup" component={GameSetup} />
