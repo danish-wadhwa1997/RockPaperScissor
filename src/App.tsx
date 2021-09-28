@@ -10,7 +10,7 @@ function App() {
     <GameTypeProvider>
       <ChoiceProvider>
         <RulesProvider>
-          <div className="container-fluid">
+          <div className="container-fluid py-5">
             <h1 className="display-1 mb-5 text-center">
               Rock Paper Scissor &amp; more..
             </h1>

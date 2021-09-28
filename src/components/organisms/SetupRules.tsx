@@ -43,7 +43,7 @@ const SetupRules = () => {
       <p className="lead text-center">
         Note: Select the options which can defeat the label.
       </p>
-      <div className="row">
+      <div className="row justify-content-center">
         {choices &&
           choices.map((item) => (
             <Rules
