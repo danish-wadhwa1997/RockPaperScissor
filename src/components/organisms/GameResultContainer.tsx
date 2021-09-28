@@ -15,9 +15,9 @@ const GameResultContainer = ({ result }: AppProps) => {
   useEffect(() => {
     if (result.player1 !== result.player2) {
       if (result.player1 > result.player2) {
-        setWinner("Player 2");
-      } else {
         setWinner("Player 1");
+      } else {
+        setWinner("Player 2");
       }
     } else {
       setWinner("Both Player");

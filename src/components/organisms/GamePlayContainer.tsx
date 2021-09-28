@@ -30,7 +30,7 @@ const GamePlayContainer = ({ onEnd, result }: AppProps) => {
   const [status, setStatus] = useState<string>(GAME_PLAY_STATUS.START);
   const [gameCount, setGameCount] = useState<number>(0);
   const [currentResult, setCurrentResult] = useState<Result>(result);
-
+  const [winner, setWinner] = useState<string>("");
   // to set players based on game type
   useEffect(() => {
     if (gameType === GAME_TYPES.PLAYER_AND_COMPUTER) {
@@ -51,11 +51,14 @@ const GamePlayContainer = ({ onEnd, result }: AppProps) => {
     if (option1 && option2 && option1.toLowerCase() !== option2.toLowerCase()) {
       if (rules[option1].find((item) => item === option2)) {
         newResult.player2 = newResult.player2 + 1;
+        setWinner("Player 2");
       } else {
         newResult.player1 = newResult.player1 + 1;
+        setWinner("Player 1");
       }
     } else {
       newResult.tie = newResult.tie + 1;
+      setWinner("Both Players");
     }
     setCurrentResult(newResult);
   };
@@ -135,6 +138,7 @@ const GamePlayContainer = ({ onEnd, result }: AppProps) => {
       )}
       {status === GAME_PLAY_STATUS.END && (
         <React.Fragment>
+          <h3 className="text-center my-2">{`${winner} Wins this Round!!`}</h3>
           <ResultSection result={currentResult} />
           <div className="text-center mt-5">
             <SecondaryButton onClick={() => handleOnEnd(currentResult)}>
