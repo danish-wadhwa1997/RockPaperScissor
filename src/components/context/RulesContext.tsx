@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { PropsChildren, RulesObj } from "../../configuration/Interfaces";
 
 type Rules = {
@@ -14,9 +14,9 @@ const RulesProvider = ({ children }: PropsChildren) => {
     Scissor: ["Rock"],
   });
 
-  const changeRules = useCallback((value: RulesObj) => {
+  const changeRules = (value: RulesObj) => {
     setRules(value);
-  }, []);
+  };
   return (
     <RulesContext.Provider value={{ rules, changeRules }}>
       {children}
