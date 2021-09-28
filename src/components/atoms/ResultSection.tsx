@@ -6,8 +6,8 @@ type AppProps = {
 const ResultSection = ({ result }: AppProps) => {
   return (
     <React.Fragment>
-      <h3>Results</h3>
-      <table className="table table-hover">
+      <h3 className="display-3 text-center my-3">Results</h3>
+      <table className="table table-hover my-3">
         <thead>
           <tr>
             <th>Player 1</th>

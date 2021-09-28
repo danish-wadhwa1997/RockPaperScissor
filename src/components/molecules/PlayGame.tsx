@@ -25,36 +25,40 @@ const PlayGame = ({
   };
   return (
     <div>
-      <div>
-        <ImageWithLabel
-          status={status}
-          image={
-            status === GAME_PLAY_STATUS.START
-              ? Rock
-              : status === GAME_PLAY_STATUS.END
-              ? choice1.image
-              : ""
-          }
-          label={choice1.label}
-        />
-        {player1 === PLAYER_TYPE.USER && (
-          <ChoiceSelect player={1} onChange={handleChoiceChange} />
-        )}
-        <div>V/S</div>
-        <ImageWithLabel
-          status={status}
-          image={
-            status === GAME_PLAY_STATUS.START
-              ? Rock
-              : status === GAME_PLAY_STATUS.END
-              ? choice2.image
-              : ""
-          }
-          label={choice2.label}
-        />
-        {player2 === PLAYER_TYPE.USER && (
-          <ChoiceSelect player={2} onChange={handleChoiceChange} />
-        )}
+      <div className="row my-3 align-items-center">
+        <div className="col-md-5 ">
+          <ImageWithLabel
+            status={status}
+            image={
+              status === GAME_PLAY_STATUS.START
+                ? Rock
+                : status === GAME_PLAY_STATUS.END
+                ? choice1.image
+                : ""
+            }
+            label={choice1.label}
+          />
+          {player1 === PLAYER_TYPE.USER && (
+            <ChoiceSelect player={1} onChange={handleChoiceChange} />
+          )}
+        </div>
+        <h1 className="text-center my-3 col-md-2">V/S</h1>
+        <div className="col-md-4 align-self-start">
+          <ImageWithLabel
+            status={status}
+            image={
+              status === GAME_PLAY_STATUS.START
+                ? Rock
+                : status === GAME_PLAY_STATUS.END
+                ? choice2.image
+                : ""
+            }
+            label={choice2.label}
+          />
+          {player2 === PLAYER_TYPE.USER && (
+            <ChoiceSelect player={2} onChange={handleChoiceChange} />
+          )}
+        </div>
       </div>
     </div>
   );

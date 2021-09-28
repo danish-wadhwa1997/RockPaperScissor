@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { Result } from "../../configuration/Interfaces";
 import MainHeadings from "../atoms/MainHeadings";
-import PrimaryButton from "../atoms/PrimaryButton";
 import ResultSection from "../atoms/ResultSection";
+import SecondaryButton from "../atoms/SecondaryButton";
 
 type AppProps = {
   result: Result;
@@ -30,10 +30,12 @@ const GameResultContainer = ({ result }: AppProps) => {
 
   return (
     <div>
-      <MainHeadings text="Results" />
+      <MainHeadings text="Final Results" />
       <ResultSection result={result} />
-      <h3>{`${winner} Wins!`}</h3>
-      <PrimaryButton onClick={endGame}>End Game</PrimaryButton>
+      <h3 className="text-center my-5">{`${winner} Wins!`}</h3>
+      <div className="text-center my-5">
+        <SecondaryButton onClick={endGame}>End Game</SecondaryButton>
+      </div>
     </div>
   );
 };

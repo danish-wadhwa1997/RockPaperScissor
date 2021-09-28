@@ -7,6 +7,7 @@ import {
 import { Choice, Result } from "../../configuration/Interfaces";
 import PrimaryButton from "../atoms/PrimaryButton";
 import ResultSection from "../atoms/ResultSection";
+import SecondaryButton from "../atoms/SecondaryButton";
 import { ChoiceContext } from "../context/ChoiceContext";
 import { GameTypeContext } from "../context/GameTypeContext";
 import { RulesContext } from "../context/RulesContext";
@@ -127,16 +128,20 @@ const GamePlayContainer = ({ onEnd, result }: AppProps) => {
         status={status}
       />
       {player1 === PLAYER_TYPE.RANDOM && player2 === PLAYER_TYPE.RANDOM && (
-        <PrimaryButton onClick={onPlayRandom}>
-          {gameCount === 0 ? "PLAY" : "PLAY AGAIN"}
-        </PrimaryButton>
+        <div className="text-center">
+          <PrimaryButton onClick={onPlayRandom}>
+            {gameCount === 0 ? "PLAY" : "PLAY AGAIN"}
+          </PrimaryButton>
+        </div>
       )}
       {status === GAME_PLAY_STATUS.END && (
         <React.Fragment>
           <ResultSection result={currentResult} />
-          <PrimaryButton onClick={() => handleOnEnd(currentResult)}>
-            END
-          </PrimaryButton>
+          <div className="text-center mt-5">
+            <SecondaryButton onClick={() => handleOnEnd(currentResult)}>
+              END
+            </SecondaryButton>
+          </div>
         </React.Fragment>
       )}
     </div>
