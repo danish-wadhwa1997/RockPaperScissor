@@ -1,5 +1,4 @@
 import React from "react";
-import Rock from "../../assets/images/rock.png";
 import { GAME_PLAY_STATUS } from "../../configuration/constants";
 type AppProps = {
   image: any;

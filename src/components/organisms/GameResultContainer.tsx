@@ -22,7 +22,7 @@ const GameResultContainer = ({ result }: AppProps) => {
     } else {
       setWinner("Both Player");
     }
-  }, []);
+  }, [result]);
 
   const endGame = () => {
     history.replace("/");
