@@ -2,3 +2,14 @@ export const GAME_TYPES = {
   PLAYER_AND_COMPUTER: "PLAYER v/s COMPUTER",
   COMPUTER_AND_COMPUTER: "COMPUTER v/s COMPUTER",
 };
+
+export const GAME_PLAY_STATUS = {
+  START: "START",
+  PLAYING: "PLAYING",
+  END: "END",
+};
+
+export const PLAYER_TYPE = {
+  USER: "USER",
+  RANDOM: "RANDOM",
+};

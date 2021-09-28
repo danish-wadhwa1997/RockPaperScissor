@@ -16,3 +16,9 @@ export declare interface SelectOption {
   label: string;
   value: string;
 }
+
+export declare interface Result {
+  player1: number;
+  tie: number;
+  player2: number;
+}
