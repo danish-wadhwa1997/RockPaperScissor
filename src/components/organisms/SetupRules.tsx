@@ -33,8 +33,22 @@ const SetupRules = () => {
     changeRules(newRules);
   };
 
+  const validateRules = (value: RulesObj): boolean => {
+    let isValid = true;
+    Object.keys(value).forEach((item) => {
+      if (value[item].length <= 0) {
+        isValid = false;
+      }
+    });
+    return isValid;
+  };
+
   const handleStart = () => {
-    history.replace("/game-play");
+    if (validateRules(rules)) {
+      history.replace("/game-play");
+    } else {
+      alert("Invalid Rules");
+    }
   };
 
   return (
