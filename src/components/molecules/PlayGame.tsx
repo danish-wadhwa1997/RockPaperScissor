@@ -4,6 +4,7 @@ import { Choice } from "../../configuration/Interfaces";
 import ChoiceSelect from "../atoms/ChoiceSelect";
 import { GAME_PLAY_STATUS, PLAYER_TYPE } from "../../configuration/constants";
 import Rock from "../../assets/images/rock.png";
+import Loading from "../../assets/images/loading.gif";
 type AppProps = {
   player1: string;
   player2: string;
@@ -34,7 +35,7 @@ const PlayGame = ({
                 ? Rock
                 : status === GAME_PLAY_STATUS.END
                 ? choice1.image
-                : ""
+                : Loading
             }
             label={choice1.label}
           />
@@ -51,7 +52,7 @@ const PlayGame = ({
                 ? Rock
                 : status === GAME_PLAY_STATUS.END
                 ? choice2.image
-                : ""
+                : Loading
             }
             label={choice2.label}
           />
