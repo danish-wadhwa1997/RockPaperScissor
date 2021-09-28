@@ -10,8 +10,10 @@ function App() {
     <GameTypeProvider>
       <ChoiceProvider>
         <RulesProvider>
-          <div>
-            <h1>Rock Paper Scissor &amp; more..</h1>
+          <div className="container-fluid">
+            <h1 className="display-1 mb-5 text-center">
+              Rock Paper Scissor &amp; more..
+            </h1>
             <Switch>
               <Route path="/game-setup" component={GameSetup} />
               <Route exact path="/game-play" component={GamePlay} />

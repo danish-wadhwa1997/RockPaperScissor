@@ -37,7 +37,7 @@ const Choices = ({ onAdd }: AppProps) => {
 
   return (
     <div className="row my-3">
-      <div className="col-md-6">
+      <div className="col-md-6 my-3">
         <label htmlFor={`choice-image`} className="form-label">
           Choice Image
         </label>
@@ -49,7 +49,7 @@ const Choices = ({ onAdd }: AppProps) => {
           onChange={handleUpload}
         />
       </div>
-      <div className="col-md-6">
+      <div className="col-md-6 my-3">
         <label htmlFor={`choice-label`} className="form-label">
           Choice Name
         </label>
@@ -61,7 +61,9 @@ const Choices = ({ onAdd }: AppProps) => {
           value={name}
         />
       </div>
-      <PrimaryButton onClick={handleAdd}>Add</PrimaryButton>
+      <div>
+        <PrimaryButton onClick={handleAdd}>Add</PrimaryButton>
+      </div>
     </div>
   );
 };

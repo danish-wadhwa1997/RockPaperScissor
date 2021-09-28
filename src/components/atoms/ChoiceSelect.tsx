@@ -21,7 +21,11 @@ const ChoiceSelect = ({ onChange, player }: AppProps) => {
     setOptions(newOptions);
   }, [choices]);
   return (
-    <select value={selectedOption} onChange={handleSelect}>
+    <select
+      value={selectedOption}
+      className="form-select"
+      onChange={handleSelect}
+    >
       <option value="">Select...</option>
       {options.length > 0 &&
         options.map((item) => (
